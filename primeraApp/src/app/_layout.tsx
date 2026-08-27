@@ -1,9 +1,21 @@
 import {Tabs } from 'expo-router'; //PARA LA NAVEGACION
 import {Ionicons} from '@expo/vector-icons'; //iconos
+import {Appbar} from 'react-native-paper';
 
 
 export default function TabLayout() {
   return(
+    <>
+    <Appbar.Header>
+        <Appbar.Action
+          icon="menu"
+        
+        />
+        <Appbar.Content
+          title="Mi aplicacion"
+        />
+    </Appbar.Header>
+    
     <Tabs
       screenOptions={{
         headerShown:false,
@@ -103,6 +115,7 @@ export default function TabLayout() {
       
 
     </Tabs>
+    </>
   );
   
 }

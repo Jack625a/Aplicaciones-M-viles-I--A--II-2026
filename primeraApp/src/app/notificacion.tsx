@@ -1,7 +1,7 @@
 import {View, Text,StyleSheet} from 'react-native';
 import {useState} from 'react';
 
-import {Button, Snackbar} from 'react-native-paper';
+import {Button, Snackbar, Appbar} from 'react-native-paper';
 
 
 export default function Notificacion(){
@@ -10,6 +10,7 @@ export default function Notificacion(){
 
   return(
     <View style={styles.contenedor}>
+      
       <Text style={styles.titulo}>Pantalla Notificacion</Text>
       <Button
         mode="contained"
@@ -33,8 +34,9 @@ const styles=StyleSheet.create({
   contenedor:{
     flex:1,
     backgroundColor:"#fafafa",
-    justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
+    justifyContent:"center"
+  
   },
   titulo:{
     fontSize:30,
