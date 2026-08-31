@@ -1,20 +1,48 @@
 import {Tabs } from 'expo-router'; //PARA LA NAVEGACION
 import {Ionicons} from '@expo/vector-icons'; //iconos
-import {Appbar} from 'react-native-paper';
+import {Appbar, PaperProvider} from 'react-native-paper';
 
+//Importacion de menu deslizable
+import {Drawer} from 'expo-router/drawer';
 
 export default function TabLayout() {
   return(
     <>
-    <Appbar.Header>
-        <Appbar.Action
-          icon="menu"
-        
+    <PaperProvider>
+      <Drawer
+          screenOptions={{
+            header:({
+                navigation,route,options
+            })=> (
+              <Appbar.Header>
+                  <Appbar.Action
+                    icon="menu"
+                    onPress={()=> navigation.toggleDrawer()}
+                  
+                  />
+                  <Appbar.Content
+                    title={options.title || route.name}
+                  />
+              </Appbar.Header>
+          ),
+        }}
+      >
+        <Drawer.Screen
+          name="index"
+          options={{
+            title:"Inicio",
+          }}
         />
-        <Appbar.Content
-          title="Mi aplicacion"
+        <Drawer.Screen
+          name="perfil"
+          options={{
+            title:"Perfil"
+          }}
         />
-    </Appbar.Header>
+
+      </Drawer>
+    </PaperProvider>
+    
     
     <Tabs
       screenOptions={{
