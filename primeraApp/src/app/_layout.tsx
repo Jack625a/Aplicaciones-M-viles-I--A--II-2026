@@ -8,42 +8,6 @@ import {Drawer} from 'expo-router/drawer';
 export default function TabLayout() {
   return(
     <>
-    <PaperProvider>
-      <Drawer
-          screenOptions={{
-            header:({
-                navigation,route,options
-            })=> (
-              <Appbar.Header>
-                  <Appbar.Action
-                    icon="menu"
-                    onPress={()=> navigation.toggleDrawer()}
-                  
-                  />
-                  <Appbar.Content
-                    title={options.title || route.name}
-                  />
-              </Appbar.Header>
-          ),
-        }}
-      >
-        <Drawer.Screen
-          name="index"
-          options={{
-            title:"Inicio",
-          }}
-        />
-        <Drawer.Screen
-          name="perfil"
-          options={{
-            title:"Perfil"
-          }}
-        />
-
-      </Drawer>
-    </PaperProvider>
-    
-    
     <Tabs
       screenOptions={{
         headerShown:false,
