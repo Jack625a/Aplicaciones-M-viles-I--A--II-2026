@@ -18,9 +18,7 @@ export  default function Index(){
       latitudeDelta:0.05,
       longitudeDelta:0.05
     });
-
-    const obtenerUbicacion=async ()=>{
-      try{
+    try{
         //1. Pedir permisos
         const { status }= await Location.requestForegroundPermissionsAsync();
         if(status!=='granted'){
@@ -47,8 +45,6 @@ export  default function Index(){
         Alert.alert("Error","No se pudo obtener su ubicacion!");
       }
     };
-
-
   return(
     <View style={styles.contenedor}>
       <Text>Mapas GPS</Text>
@@ -87,8 +83,8 @@ export  default function Index(){
 
     </View>
   );
-}
-}
+
+};
 
 const styles=StyleSheet.create({
   contenedor:{
