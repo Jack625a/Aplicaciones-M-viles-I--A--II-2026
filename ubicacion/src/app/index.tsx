@@ -7,9 +7,7 @@ import MapView, {Marker,UrlTile} from 'react-native-maps';
 
 
 export  default function Index(){
-  //Funcion para obtener la ubicacion
-  const obtenerUbicacion= async()=>{
-    //Variables de estado
+  //Variables de estado
     const [latitud,setLatitud]=useState<number|null>(null);
     const [longitud,setLongitud]=useState<number|null>(null);
     const [ubicacion,setUbicacion]=useState({
@@ -18,6 +16,9 @@ export  default function Index(){
       latitudeDelta:0.05,
       longitudeDelta:0.05
     });
+  //Funcion para obtener la ubicacion
+  const obtenerUbicacion= async()=>{
+    
     try{
         //1. Pedir permisos
         const { status }= await Location.requestForegroundPermissionsAsync();
